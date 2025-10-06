@@ -5,6 +5,7 @@ namespace odometry_bridge
 
     OdometryBridge::OdometryBridge(const rclcpp::NodeOptions &options) : Node("odometry_bridge", options)
     {
+        RCLCPP_INFO(get_logger(), "OdometryBridge init is started.");
         rclcpp::on_shutdown([this]()
                             { this->onShutdown(); });
         imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
@@ -288,10 +289,3 @@ namespace odometry_bridge
     }
 
 } // namespace odometry_bridge
-
-#include "rclcpp_components/register_node_macro.hpp"
-
-// Register the component with class_loader.
-// This acts as a sort of entry point, allowing the component to be discoverable when its library
-// is being loaded into a running process.
-RCLCPP_COMPONENTS_REGISTER_NODE(odometry_bridge::OdometryBridge)

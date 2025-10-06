@@ -6,8 +6,7 @@
 
 namespace test
 {   
-    
-    std::string hex_to_string(uint8_t data[],int len){
+    inline std::string hex_to_string(uint8_t data[],int len){
         std::ostringstream hex;
         std::string text;
 
@@ -20,11 +19,11 @@ namespace test
     }
 
     template <std::size_t N>
-    std::string hex_to_string(std::array<uint8_t,N> data){
+    inline std::string hex_to_string(std::array<uint8_t,N> data){
         return hex_to_string(data.data(),data.size());
     }
 
-    std::string hex_to_string(std::vector<uint8_t> data){
+    inline std::string hex_to_string(std::vector<uint8_t> data){
         return hex_to_string(data.data(),data.size());
     }
     

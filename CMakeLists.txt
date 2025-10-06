@@ -76,7 +76,7 @@ install(
 ament_export_include_directories(include)
 
 install(TARGETS
-  odometry_bridge
+  odometry_bridge odometry_bridge_asnode
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
   RUNTIME DESTINATION bin
